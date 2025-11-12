@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply min-h-screen bg-slate-950 text-slate-100;
+}
+
+.radial-mask {
+  position: relative;
+  isolation: isolate;
+}
+
+.radial-mask::before {
+  content: "";
+  position: absolute;
+  inset: -10%;
+  background: radial-gradient(ellipse at top, rgba(56, 189, 248, 0.35), transparent 60%),
+    radial-gradient(ellipse at bottom, rgba(249, 115, 22, 0.25), transparent 55%);
+  filter: blur(60px);
+  opacity: 0.85;
+  z-index: -1;
+}
